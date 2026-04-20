@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Casual Flight Services</title>
+  <meta name="description" content="Explore Casual Flight Services: delayed baggage recovery, home bag pickup, wheelchair assistance, and airport check-in." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230A1F44'/><text x='50%25' y='55%25' font-family='Inter,sans-serif' font-size='22' font-weight='800' text-anchor='middle' fill='white' dominant-baseline='middle'>CFS</text></svg>" />
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="brand">
+          <span class="brand-mark">CFS</span>
+          <span class="brand-text">Casual Flight Services<small>Baggage &amp; Airport Logistics</small></span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html" class="active">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-ghost btn-sm">Partner with us</a>
+          <a href="contact.html" class="btn btn-primary btn-sm">Get started
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-primary">Get started</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Page header -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow reveal">Our services</span>
+      <h1 class="reveal" data-delay="1">Everything between the curb and the claim belt.</h1>
+      <p class="lead reveal" data-delay="2">Four focused service lines, each built around a single promise: the smoothest possible handoff between you, your passengers, and their bags.</p>
+    </div>
+  </section>
+
+  <!-- Service 1: Delayed Baggage -->
+  <section id="delayed">
+    <div class="container">
+      <div class="split">
+        <div class="split-text reveal">
+          <span class="eyebrow">Service 01</span>
+          <h2>Delayed Baggage Recovery</h2>
+          <p class="lead">When a bag misses its flight, what happens next determines whether a passenger becomes a lifelong customer — or a complaint in your inbox. CFS turns baggage irregularity into a moment of service.</p>
+          <ul class="split-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Direct integration with WorldTracer, BagNet, and carrier MCS</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Average delivery within 4 hours of bag arrival at destination</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Live passenger SMS updates, branded to your airline</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Signed proof of delivery and photo confirmation every time</li>
+          </ul>
+        </div>
+        <div class="split-image reveal" data-delay="2" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=1200&q=80" alt="Baggage claim conveyor belt" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 2: Home Pickup -->
+  <section id="pickup" style="background: var(--off-white);">
+    <div class="container">
+      <div class="split reverse">
+        <div class="split-image reveal" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=1200&q=80" alt="Luggage packed and ready for pickup at home" />
+        </div>
+        <div class="split-text reveal" data-delay="2">
+          <span class="eyebrow">Service 02</span>
+          <h2>Home Bag Pickup &amp; Check‑In</h2>
+          <p class="lead">We show up at your door the day of — or the evening before — your flight, weigh and tag your bags, and deliver them straight to baggage claim at your destination.</p>
+          <ul class="split-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>2‑hour arrival window of your choice</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Your airline's tags applied on‑site before we leave your door</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>End‑to‑end GPS tracking; you watch every handoff</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Standard insurance up to $2,500 per bag, extendable</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 3: Wheelchair -->
+  <section id="mobility">
+    <div class="container">
+      <div class="split">
+        <div class="split-text reveal">
+          <span class="eyebrow">Service 03</span>
+          <h2>Wheelchair &amp; Mobility Assistance</h2>
+          <p class="lead">Our attendants are trained, background‑checked, and — most importantly — patient. We treat every passenger like we'd treat our own grandparents, because many of them are.</p>
+          <ul class="split-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Curb‑to‑gate, gate‑to‑gate, and gate‑to‑curb coverage</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>ACAA‑compliant training and annual recertification</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Electric and standard wheelchair fleet, maintained daily</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Dedicated family and companion coordination</li>
+          </ul>
+        </div>
+        <div class="split-image reveal" data-delay="2" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?auto=format&fit=crop&w=1200&q=80" alt="Airport terminal passenger assistance" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service 4: Check-in -->
+  <section id="checkin" style="background: var(--off-white);">
+    <div class="container">
+      <div class="split reverse">
+        <div class="split-image reveal" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=1200&q=80" alt="Airport check-in counters" />
+        </div>
+        <div class="split-text reveal" data-delay="2">
+          <span class="eyebrow">Service 04</span>
+          <h2>Airport Check‑In Services</h2>
+          <p class="lead">Meet us at the curb. We'll handle your airline check‑in, print boarding passes, tag your bags, and walk you to the security line. Especially useful for families, groups, and premium travelers.</p>
+          <ul class="split-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Curb‑side greet at a pre‑booked time</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Full check‑in, bag drop, and boarding pass delivery</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Optional TSA/PreCheck line escort</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Group and corporate travel plans available</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing-style cards -->
+  <section>
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Plans</span>
+        <h2>Built for every kind of traveler and operator.</h2>
+        <p class="lead">Simple, predictable pricing. No surge fees, no hidden handling charges.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card reveal" data-delay="1">
+          <span class="eyebrow">Traveler</span>
+          <h3 style="margin-top:14px;">Individual</h3>
+          <p style="margin-top:8px;">One‑off home pickups, airport check‑in, or curb assistance.</p>
+          <div style="margin-top:24px;"><strong style="font-size:2rem; color: var(--navy-900); letter-spacing:-0.02em;">From $39</strong> <span style="color:var(--ink-500);">/ trip</span></div>
+          <a href="contact.html" class="btn btn-ghost" style="margin-top:24px; width:100%;">Book a pickup</a>
+        </article>
+
+        <article class="card feature reveal" data-delay="2">
+          <span class="eyebrow light">Most popular</span>
+          <h3 style="margin-top:14px;">Frequent Flyer</h3>
+          <p style="margin-top:8px;">Monthly membership with priority dispatch and discounted pickups.</p>
+          <div style="margin-top:24px;"><strong style="font-size:2rem; color: #fff; letter-spacing:-0.02em;">$29</strong> <span style="color:rgba(255,255,255,0.7);">/ month</span></div>
+          <a href="contact.html" class="btn btn-light" style="margin-top:24px; width:100%;">Start membership</a>
+        </article>
+
+        <article class="card reveal" data-delay="3">
+          <span class="eyebrow">Enterprise</span>
+          <h3 style="margin-top:14px;">Airlines &amp; Airports</h3>
+          <p style="margin-top:8px;">SLA‑backed ground services, custom integration, and dedicated account team.</p>
+          <div style="margin-top:24px;"><strong style="font-size:2rem; color: var(--navy-900); letter-spacing:-0.02em;">Custom</strong></div>
+          <a href="contact.html" class="btn btn-dark" style="margin-top:24px; width:100%;">Request a quote</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="container">
+      <div class="cta-band reveal">
+        <span class="eyebrow light">Next step</span>
+        <h2 style="margin-top: 16px;">Tell us what you need — we'll build the plan.</h2>
+        <p>Whether it's a one‑off pickup or a multi‑station contract, our team replies within one business day.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-light btn-lg">Get in touch
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand">
+            <span class="brand-mark">CFS</span>
+            <span class="brand-text">Casual Flight Services<small>Baggage &amp; Airport Logistics</small></span>
+          </a>
+          <p>CFS is a modern ground services partner for airlines, airports, and travelers — delivering delayed bags, home pickups, wheelchair assistance, and check‑in.</p>
+        </div>
+        <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html#delayed">Delayed Baggage</a></li><li><a href="services.html#pickup">Home Bag Pickup</a></li><li><a href="services.html#mobility">Wheelchair Assistance</a></li><li><a href="services.html#checkin">Airport Check‑In</a></li></ul></div>
+        <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">About CFS</a></li><li><a href="about.html#careers">Careers</a></li><li><a href="about.html#press">Press</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h5>For Partners</h5><ul><li><a href="contact.html">Airlines</a></li><li><a href="contact.html">Airports</a></li><li><a href="contact.html">Become an agent</a></li><li><a href="contact.html">Support</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Casual Flight Services. All rights reserved.</span>
+        <span><a href="#">Privacy</a> &nbsp;·&nbsp; <a href="#">Terms</a> &nbsp;·&nbsp; <a href="#">Accessibility</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
