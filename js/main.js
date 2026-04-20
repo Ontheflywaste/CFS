@@ -47,34 +47,6 @@
     reveals.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // Contact form (mockup-only: simulates a submit)
-  const form = document.getElementById('contactForm');
-  const status = document.getElementById('formStatus');
-  if (form && status) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const required = form.querySelectorAll('[required]');
-      let ok = true;
-      required.forEach((el) => {
-        if (!el.value) {
-          ok = false;
-          el.style.borderColor = '#DC2626';
-        } else {
-          el.style.borderColor = '';
-        }
-      });
-      if (!ok) {
-        status.style.display = 'block';
-        status.style.background = '#FEE2E2';
-        status.style.color = '#7F1D1D';
-        status.textContent = 'Please fill in the required fields.';
-        return;
-      }
-      status.style.display = 'block';
-      status.style.background = 'var(--navy-50)';
-      status.style.color = 'var(--navy-900)';
-      status.textContent = "Thanks — we've received your message and will be in touch shortly.";
-      form.reset();
-    });
-  }
+  // NOTE: Contact form submission is handled separately in js/contact-form.js
+  // so this file remains a shared, page-agnostic bundle.
 })();
