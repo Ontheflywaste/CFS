@@ -99,7 +99,7 @@
     } catch (err) {
       console.error('Supabase insert failed:', err);
       setStatus(
-        "Something went wrong sending your message. Please try again, or email hello@casualflightservices.com.",
+        "Something went wrong sending your message. Please try again, or email casualflightservices@gmail.com.",
         'error'
       );
     } finally {
