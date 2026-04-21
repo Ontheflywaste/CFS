@@ -11,6 +11,8 @@ A static HTML/CSS/JS mockup for Casual Flight Services, a baggage and airport lo
 - `css/styles.css` — Full design system (tokens, components, responsive)
 - `js/main.js` — Sticky header, mobile nav, scroll reveals
 - `js/contact-form.js` — Supabase insert for contact submissions
+- `supabase/functions/notify-contact/index.ts` — Edge Function that emails new submissions via Resend
+- `SUPABASE_SETUP.md` — Click-by-click setup for the contacts table, edge function, webhook, and email
 - `vercel.json` — Tells Vercel to serve this as a plain static site
 
 ## Design
@@ -29,38 +31,19 @@ python3 -m http.server 8000
 # then visit http://localhost:8000
 ```
 
-## Supabase setup (one-time)
+## Supabase setup
 
-The contact form writes to a `contacts` table using the Supabase publishable key.
-Publishable keys are safe to ship in client code — they can only do what the `anon`
-role is allowed to do via Row Level Security.
+Full, click-by-click instructions — including the Resend + webhook wiring
+for email notifications to `casualflightservices@gmail.com` — live in
+[`SUPABASE_SETUP.md`](SUPABASE_SETUP.md).
 
-1. Open your Supabase project → **SQL Editor** → **New query**.
-2. Paste and run:
+TL;DR of what's needed:
+1. Create the `contacts` table + RLS policy (SQL in the setup doc).
+2. Deploy the edge function at `supabase/functions/notify-contact/`.
+3. Add a `RESEND_API_KEY` secret + a Database Webhook on inserts.
 
-```sql
-create table public.contacts (
-  id uuid primary key default gen_random_uuid(),
-  created_at timestamptz not null default now(),
-  first_name text not null,
-  last_name  text not null,
-  email      text not null,
-  phone      text,
-  inquiry_type text,
-  service    text,
-  message    text not null
-);
-
-alter table public.contacts enable row level security;
-
-create policy "Allow anonymous inserts"
-  on public.contacts for insert to anon with check (true);
-```
-
-3. That's it. Submissions from `contact.html` will land in the `contacts` table.
-
-**Where the keys live:** `js/contact-form.js` (top of file). If the project URL or
-publishable key changes, update them there.
+**Where the Supabase keys live:** `js/contact-form.js` (top of file). If
+the project URL or publishable key changes, update them there.
 
 ## Deploy on Vercel
 
