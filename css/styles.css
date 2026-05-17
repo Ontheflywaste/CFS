@@ -414,23 +414,6 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
   -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 30%, transparent 75%);
   pointer-events: none;
 }
-/* Hero text retuned to white so the existing copy stays fully
-   readable against the new dark photographic background. */
-.hero .eyebrow { color: rgba(255,255,255,0.78); }
-.hero h1,
-.hero p.lead { color: var(--white); }
-.hero h1 .accent { color: #9DBCEB; }
-.hero-meta { border-top-color: rgba(255,255,255,0.18); }
-.hero-meta div strong { color: var(--white); }
-.hero-meta div span { color: rgba(255,255,255,0.7); }
-.hero .btn-ghost {
-  color: var(--white);
-  border-color: rgba(255,255,255,0.5);
-}
-.hero .btn-ghost:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.8);
-}
 @media (max-width: 1024px) {
   /* On mobile the layout stacks — switch to a top-to-bottom overlay so
      the photo reads through the full width and the text sits over
@@ -476,6 +459,46 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
 .hero-meta div span {
   font-size: 0.85rem;
   color: var(--ink-500);
+}
+
+/* ── Hero text on dark photographic background ─────────────────────
+   These overrides MUST come after the base .hero h1 / .hero-meta
+   rules above — equal-specificity rules later in source order win.
+   The previous attempt to set these earlier in the stylesheet was
+   silently clobbered, which is why the meta numbers + accent kept
+   rendering navy on navy. */
+.hero .eyebrow { color: rgba(255,255,255,0.85); }
+.hero h1 { color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+.hero p.lead {
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+/* "Handle with care." accent — warm gold pulled from the marshaller's
+   vest in the photo. Reads cleanly against the dark navy overlay and
+   stops the line from blending into the body color. */
+.hero h1 .accent {
+  color: #F4D27A;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+.hero-meta { border-top-color: rgba(255,255,255,0.22); }
+.hero-meta div strong {
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+.hero-meta div span { color: rgba(255,255,255,0.78); }
+.hero .btn-ghost {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.55);
+}
+.hero .btn-ghost:hover {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,255,255,0.85);
+  color: #ffffff;
+}
+/* With the hero-visual removed the text column should breathe across
+   the full width but the copy should stay left-aligned and capped. */
+.hero-grid:not(:has(.hero-visual)) {
+  grid-template-columns: minmax(0, 720px);
 }
 
 .hero-visual {
