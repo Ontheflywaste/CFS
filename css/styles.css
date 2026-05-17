@@ -870,3 +870,112 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
   .cta-band { padding: 36px 24px; }
   .quote-card { padding: 24px; }
 }
+
+/* ───────────────────────────────────────────────────────────────────
+   Services grid — 4 cards on top, 3 cards centered on the bottom row.
+   Implemented as a 12-column grid: top-row cards span 3 cols each (4×3
+   = 12), bottom-row cards span 4 cols each (3×4 = 12, centered by
+   default). Below 1024px it falls back to 2-col, and at 640px to 1-col.
+   ─────────────────────────────────────────────────────────────────── */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+.services-grid > :nth-child(-n+4) { grid-column: span 3; }
+.services-grid > :nth-child(n+5)  { grid-column: span 4; }
+
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .services-grid > * { grid-column: span 1 !important; }
+}
+@media (max-width: 640px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .services-grid > * { grid-column: span 1 !important; }
+}
+
+/* Photo thumbnail at the top of each service card. Replaces the legacy
+   .card-icon SVG block. Aspect-ratio gives a stable card height across
+   all photos. object-fit: cover ensures no distortion. */
+.card-media {
+  aspect-ratio: 16 / 10;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  background: var(--navy-50);
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease);
+}
+.card:hover .card-media img,
+.card.invert:hover .card-media img {
+  transform: scale(1.04);
+}
+
+/* ───────────────────────────────────────────────────────────────────
+   Partner With Us nav button — primary blue CTA in the nav-cta slot.
+   Subtle pulse + glow draws attention without screaming.
+   ─────────────────────────────────────────────────────────────────── */
+.btn-partner {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1D4ED8;
+  color: #ffffff !important;
+  border: 1px solid #1D4ED8;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  position: relative;
+  transition: transform 0.2s var(--ease), background 0.2s var(--ease), border-color 0.2s var(--ease);
+  animation: btnPartnerPulse 2.4s ease-in-out infinite;
+}
+.btn-partner:hover {
+  background: #1e40af;
+  border-color: #1e40af;
+  transform: translateY(-1px);
+}
+.btn-partner:focus-visible {
+  outline: 2px solid #93C5FD;
+  outline-offset: 2px;
+}
+.btn-partner svg { width: 14px; height: 14px; }
+
+@keyframes btnPartnerPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 0 0 rgba(29, 78, 216, 0.45),
+      0 4px 14px -4px rgba(29, 78, 216, 0.42);
+  }
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(29, 78, 216, 0),
+      0 6px 18px -4px rgba(29, 78, 216, 0.48);
+  }
+}
+
+/* In the mobile menu, the Partner button keeps its blue styling but
+   takes the full width so it looks like a CTA inside the drawer. */
+.mobile-menu .btn-partner {
+  width: 100%;
+  justify-content: center;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+  border-bottom: none;
+  margin-top: 8px;
+}
+
+/* Make the desktop CTA visible at small widths only when the hamburger
+   opens the drawer. On the always-visible bar we hide the button under
+   the same breakpoint that hides nav-links. */
+@media (max-width: 900px) {
+  .nav-cta > .btn-partner { display: none; }
+}
