@@ -391,22 +391,56 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
   position: relative;
   padding: clamp(80px, 12vw, 140px) 0 clamp(64px, 10vw, 120px);
   overflow: hidden;
+  /* Full-width hero photo (airport marshaller) + dark navy gradient
+     overlay. Gradient is heavier on the left half so the text column
+     stays fully readable; right side fades to let the photo show
+     through. */
   background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(19, 56, 116, 0.10), transparent 60%),
-    radial-gradient(900px 500px at -10% 20%, rgba(10, 31, 68, 0.06), transparent 60%),
-    var(--off-white);
+    linear-gradient(to right, rgba(10,31,68,0.85) 50%, rgba(10,31,68,0.40) 100%),
+    url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=85") center / cover no-repeat,
+    var(--navy-900);
 }
+/* Decorative grid overlay — re-tuned to a very faint white so it still
+   reads as texture against the dark photo without competing with it. */
 .hero::after {
   content: '';
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(10,31,68,0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(10,31,68,0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse at 50% 40%, black 30%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse at 50% 40%, black 30%, transparent 75%);
   pointer-events: none;
+}
+/* Hero text retuned to white so the existing copy stays fully
+   readable against the new dark photographic background. */
+.hero .eyebrow { color: rgba(255,255,255,0.78); }
+.hero h1,
+.hero p.lead { color: var(--white); }
+.hero h1 .accent { color: #9DBCEB; }
+.hero-meta { border-top-color: rgba(255,255,255,0.18); }
+.hero-meta div strong { color: var(--white); }
+.hero-meta div span { color: rgba(255,255,255,0.7); }
+.hero .btn-ghost {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.5);
+}
+.hero .btn-ghost:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.8);
+}
+@media (max-width: 1024px) {
+  /* On mobile the layout stacks — switch to a top-to-bottom overlay so
+     the photo reads through the full width and the text sits over
+     consistent darkness. */
+  .hero {
+    background:
+      linear-gradient(to bottom, rgba(10,31,68,0.80) 0%, rgba(10,31,68,0.92) 100%),
+      url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1920&q=85") center / cover no-repeat,
+      var(--navy-900);
+  }
 }
 .hero .container { position: relative; z-index: 1; }
 .hero-grid {
