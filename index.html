@@ -28,15 +28,11 @@
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="services.html">Services</a></li>
-          <li class="has-dropdown">
-            <a href="contact.html" class="nav-dropdown-trigger" aria-haspopup="true">Contact <svg class="nav-caret" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
-            <ul class="nav-submenu" aria-label="Contact options">
-              <li><a href="partner.html">Partner With Us</a></li>
-            </ul>
-          </li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
 
         <div class="nav-cta">
+          <a href="partner.html" class="btn-partner" aria-label="Partner With Us — for airports, airlines, and ground handlers">Partner With Us</a>
           <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
             <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
@@ -49,7 +45,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="partner.html" class="mobile-subitem">Partner With Us</a></li>
+        <li><a href="partner.html" class="btn-partner btn-partner-mobile" aria-label="Partner With Us — for airports, airlines, and ground handlers">Partner With Us</a></li>
       </ul>
     </div>
   </header>
@@ -83,13 +79,13 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal" data-delay="2" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1200&q=80" alt="Airport runway at dusk" />
+        <div class="hero-visual reveal" data-delay="2">
+          <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80" alt="Aircraft on the tarmac at golden hour" />
           <div class="hero-card">
             <span class="pulse" aria-hidden="true"></span>
             <div>
-              <strong>Live dispatch — Dallas / DFW</strong>
-              <span>Recovery agent assigned • ETA 42 min</span>
+              <strong>Live dispatch — 12 stations</strong>
+              <span>Recovery agents on the move now</span>
             </div>
           </div>
         </div>
@@ -121,10 +117,13 @@
         <p class="lead">Whether you're an airline reuniting a passenger with a missing suitcase, an airport partner staffing your ramp, or a traveler who just wants to skip the counter — Casual Flight Services is built to make the hard part invisible.</p>
       </div>
 
-      <div class="grid grid-4">
+      <!-- Services grid — 4 on top, 3 centered on bottom (12-col CSS grid).
+           Each card leads with a real photo thumbnail; on hover the card
+           flips from navy to white via the .card.invert rules already in CSS. -->
+      <div class="services-grid">
         <article class="card invert reveal" data-delay="1">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="7" width="14" height="12" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/><path d="M9 12h6"/></svg>
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=900&q=80" alt="Baggage on an airport claim conveyor" loading="lazy" />
           </div>
           <h3>Delayed Baggage Recovery</h3>
           <p>When a bag misses its flight, we find it, track it, and deliver it to the passenger — at home, hotel, or office — with full visibility for your ops team.</p>
@@ -134,8 +133,8 @@
         </article>
 
         <article class="card invert reveal" data-delay="2">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10l9-7 9 7"/><path d="M5 9v11h14V9"/><path d="M9 20v-6h6v6"/></svg>
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?auto=format&fit=crop&w=900&q=80" alt="Luggage packed at home ready for pickup" loading="lazy" />
           </div>
           <h3>Home Bag Pickup</h3>
           <p>We collect your luggage from your door, check it in with your airline, and deliver it to baggage claim at your destination. Fly hands‑free.</p>
@@ -145,8 +144,8 @@
         </article>
 
         <article class="card invert reveal" data-delay="3">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v6h5l2 6"/><path d="M12 13l-4 2-2 5"/><circle cx="8" cy="20" r="2"/></svg>
+          <div class="card-media">
+            <img src="img/wheelchair-assistance.jpg" alt="Airport attendant assisting a passenger in a wheelchair through the terminal" loading="lazy" />
           </div>
           <h3>Wheelchair Assistance</h3>
           <p>Curb‑to‑gate and gate‑to‑curb mobility support delivered by trained, compassionate attendants. We help your passengers arrive ready and unhurried.</p>
@@ -156,8 +155,8 @@
         </article>
 
         <article class="card invert reveal" data-delay="4">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/><path d="M17 17l2 2 3-3"/></svg>
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=900&q=80" alt="Airport check-in counters" loading="lazy" />
           </div>
           <h3>Airport Check‑In</h3>
           <p>Skip the counter. Our agents handle airline check‑in and baggage drop on your behalf so you can move straight through security.</p>
@@ -167,8 +166,8 @@
         </article>
 
         <article class="card invert reveal" data-delay="5">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v10H3z"/><path d="M7 17V7"/><path d="M17 17V7"/></svg>
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1601834912100-c8d2d11ce1ea?auto=format&fit=crop&w=900&q=80" alt="Cargo being loaded onto an aircraft" loading="lazy" />
           </div>
           <h3>Cargo Handling</h3>
           <p>Loading, unloading, sortation, and secure transfer of baggage and freight between aircraft and terminal — staffed and tracked end‑to‑end.</p>
@@ -178,8 +177,8 @@
         </article>
 
         <article class="card invert reveal" data-delay="6">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3"/><path d="M12 19v3"/><path d="M2 12h3"/><path d="M19 12h3"/></svg>
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80" alt="Aircraft on the tarmac with ground crew" loading="lazy" />
           </div>
           <h3>Ground Handling</h3>
           <p>Marshalling, towing, cabin turn, GPU connection, and pre‑departure checks. The ramp choreography that keeps your schedule honest.</p>
@@ -189,8 +188,8 @@
         </article>
 
         <article class="card invert reveal" data-delay="7">
-          <div class="card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1576613109753-27804de2cba8?auto=format&fit=crop&w=900&q=80" alt="Airport security officer at access point" loading="lazy" />
           </div>
           <h3>Security Services</h3>
           <p>Access control, screening support, secure escorts, and perimeter monitoring — TSA‑aware, airport‑authority compliant, audit‑ready.</p>
@@ -252,7 +251,7 @@
           </div>
         </div>
         <div class="split-image reveal" data-delay="2" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=1200&q=80" alt="Traveler with suitcase at the front door" />
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80" alt="Modern airport terminal interior" />
         </div>
       </div>
     </div>
