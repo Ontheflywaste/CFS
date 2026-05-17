@@ -28,6 +28,43 @@
     });
   }
 
+  // Contact dropdown — CSS handles hover and :focus-within. We add click
+  // toggling for touch devices (no hover) and Escape to close. The dropdown
+  // trigger is the Contact <a> itself; tapping it on touch toggles the
+  // submenu first instead of immediately following the link. A second tap
+  // (or tapping the open submenu link) navigates.
+  document.querySelectorAll('.nav-links .has-dropdown').forEach((parent) => {
+    const trigger = parent.querySelector('.nav-dropdown-trigger');
+    if (!trigger) return;
+    let armed = false;
+    trigger.addEventListener('click', (e) => {
+      // On a fine pointer device (mouse), let the link work normally.
+      if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      if (!parent.classList.contains('open')) {
+        e.preventDefault();
+        // Close other open dropdowns first
+        document.querySelectorAll('.nav-links .has-dropdown.open').forEach((p) => {
+          if (p !== parent) p.classList.remove('open');
+        });
+        parent.classList.add('open');
+        armed = true;
+      } else if (armed) {
+        // Second tap → follow the link
+        armed = false;
+      }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    document.querySelectorAll('.nav-links .has-dropdown.open').forEach((p) => {
+      if (!p.contains(e.target)) p.classList.remove('open');
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.nav-links .has-dropdown.open').forEach((p) => p.classList.remove('open'));
+    }
+  });
+
   // Scroll reveal via IntersectionObserver
   const reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && reveals.length) {

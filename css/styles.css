@@ -242,6 +242,81 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
   border-bottom: 1px solid var(--border);
 }
 .mobile-menu .btn { margin-top: 12px; width: 100%; justify-content: center; }
+/* Sub-item under Contact in the mobile menu — indented + slightly lighter so
+   the parent-child relationship is obvious without nested <ul> markup. */
+.mobile-menu a.mobile-subitem {
+  padding-left: 20px;
+  color: var(--ink-700);
+  font-weight: 500;
+  position: relative;
+}
+.mobile-menu a.mobile-subitem::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 50%;
+  transform: translateY(-50%);
+  width: 10px; height: 1px;
+  background: var(--ink-500, #94a3b8);
+}
+
+/* ── Contact dropdown (desktop) ────────────────────────────────────── */
+.nav-links .has-dropdown { position: relative; }
+.nav-links .nav-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links .nav-caret {
+  transition: transform 0.2s var(--ease);
+  opacity: 0.7;
+}
+.nav-links .has-dropdown:hover .nav-caret,
+.nav-links .has-dropdown:focus-within .nav-caret {
+  transform: rotate(180deg);
+}
+.nav-submenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 14px;
+  min-width: 200px;
+  padding: 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 28px -8px rgba(15, 23, 42, 0.16),
+              0 2px 6px -2px rgba(15, 23, 42, 0.08);
+  list-style: none;
+  display: none;
+  z-index: 60;
+}
+.nav-submenu::before {
+  /* Invisible bridge so the menu doesn't close when the cursor crosses
+     the gap between trigger and submenu. */
+  content: '';
+  position: absolute;
+  top: -14px; left: 0; right: 0; height: 14px;
+}
+.nav-submenu li { margin: 0; }
+.nav-submenu a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: var(--ink-700);
+  white-space: nowrap;
+}
+.nav-submenu a:hover,
+.nav-submenu a.active {
+  background: var(--off-white, #f8f9fc);
+  color: var(--navy-900);
+}
+.nav-submenu a.active::after { content: none; }
+.nav-links .has-dropdown:hover .nav-submenu,
+.nav-links .has-dropdown:focus-within .nav-submenu,
+.nav-links .has-dropdown.open .nav-submenu {
+  display: block;
+}
 
 /* ---------- Buttons ---------- */
 .btn {
