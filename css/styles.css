@@ -141,20 +141,37 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
 }
 
 /* ---------- Header / Nav ---------- */
+/* Navbar — same metallic-navy recipe as .dark-section (base #030B1F
+   navy-900 plus two soft radial highlights). When scrolled we deepen
+   the bottom border to a faint white so the divider stays subtle on the
+   dark surface. */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.82);
+  background:
+    radial-gradient(600px 200px at 10% 10%, rgba(42, 78, 147, 0.35), transparent 60%),
+    radial-gradient(600px 200px at 95% 90%, rgba(19, 56, 116, 0.35), transparent 60%),
+    var(--navy-900);
   backdrop-filter: saturate(180%) blur(12px);
   -webkit-backdrop-filter: saturate(180%) blur(12px);
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
 }
 .site-header.scrolled {
-  border-bottom-color: var(--border);
-  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
 }
+/* Re-tune nav text for the dark background. */
+.site-header .brand { color: #ffffff; }
+.site-header .brand .dot { background: rgba(255, 255, 255, 0.65); }
+.site-header .nav-links a { color: rgba(255, 255, 255, 0.78); }
+.site-header .nav-links a:hover,
+.site-header .nav-links a.active { color: #ffffff; }
+.site-header .nav-links a.active::after { background: #ffffff; }
+.site-header .nav-toggle { color: #ffffff; }
+/* The blue Partner With Us pill already pops against navy — no change
+   needed, but bump the focus ring contrast slightly. */
+.site-header .btn-partner:focus-visible { outline-color: #cfe0ff; }
 .nav {
   display: flex;
   align-items: center;
