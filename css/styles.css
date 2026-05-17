@@ -512,10 +512,11 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
   border-color: rgba(255,255,255,0.85);
   color: #ffffff;
 }
-/* With the hero-visual removed the text column should breathe across
-   the full width but the copy should stay left-aligned and capped. */
+/* With the hero-visual removed the text column spans the full grid
+   width. .lead already self-caps at 62ch so the paragraph stays
+   readable; the h1 + meta row stretch across the container. */
 .hero-grid:not(:has(.hero-visual)) {
-  grid-template-columns: minmax(0, 720px);
+  grid-template-columns: 1fr;
 }
 
 .hero-visual {
