@@ -184,7 +184,7 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
   gap: 2px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   letter-spacing: -0.025em;
   color: var(--navy-900);
   line-height: 1;
@@ -200,7 +200,7 @@ section { padding: clamp(64px, 8vw, 112px) 0; }
   flex: 0 0 6px;
 }
 @media (max-width: 480px) {
-  .brand { font-size: 1rem; }
+  .brand { font-size: 1.15rem; }
 }
 .nav-links {
   display: flex;
